@@ -1,0 +1,8 @@
+FROM osixia/openldap
+
+LABEL maintainer="oriol.filter.7e3@itb.cat"
+
+ENV LDAP_ORGANISATION="Arcade Shop" \
+LDAP_DOMAIN="ashop.sh"
+#LDAP_DOMAIN="shihadeh.intern"
+COPY bootstrap.ldif /container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif

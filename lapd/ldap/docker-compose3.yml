@@ -1,0 +1,18 @@
+version: '3'
+services:
+  ldap:
+    image: osixia/openldap
+    ports:
+      - 389:389
+    hostname: sldap
+  phpldap:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap
+    ports:
+      - 443:443
+#    depends_on:
+#      - slapd
+    links:
+      - ldap:ldap
+    hostname: phpldap

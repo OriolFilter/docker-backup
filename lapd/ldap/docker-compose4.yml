@@ -1,0 +1,51 @@
+version: '3'
+services:
+#  ldap:
+#    image: osixia/openldap
+#    ports:
+#      - 389:389
+#    hostname: sldap
+
+
+  ldap:
+    image: docker.io/bitnami/openldap:2-debian-10
+    ports:
+      - '1389:1389'
+      - '1636:1636'
+      - '389:389'
+      - '636:636'
+    environment:
+      - LDAP_ADMIN_USERNAME=admin
+      - LDAP_ADMIN_PASSWORD=admin
+      - LDAP_USERS=user01,user02
+      - LDAP_PASSWORDS=password1,password2
+    volumes:
+      - ./volumes/ldap:/bitnami/openldap'
+    tty: true
+    stdin_open: true
+    domainname: "example.org" # important: same as hostname
+    hostname: sldap
+#    hostname: "example.org"
+
+
+
+
+
+
+
+
+
+
+
+
+  phpldap:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap
+    ports:
+      - 443:443
+#    depends_on:
+#      - slapd
+    links:
+      - ldap:ldap
+    hostname: phpldap

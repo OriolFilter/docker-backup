@@ -1,0 +1,128 @@
+# https://techdocs.broadcom.com/us/en/symantec-security-software/identity-security/directory/14-1/integrating/integrate-a-websphere-portal-server/populate-ca-directory/create-an-ldif-file-containing-users.html
+# https://ldapwiki.com/wiki/ObjectClass
+# https://ldapwiki.com/wiki/ObjectClass%20Types
+# https://www.bdat.net/documentos/cursos/ar01s88.html
+# https://github.com/keycloak/keycloak/blob/master/examples/ldap/ldap-example-users.ldif
+# http://formacion.intef.es/pluginfile.php/37414/mod_imscp/content/1/administracin_de_openldap.html
+
+# /* Already created by default */
+#dn: dc=ashop,dc=sh
+#changetype: add
+#objectclass: dcObject
+#objectclass: organization
+#o: ashop
+#dc: ashop
+
+# UO 
+
+dn: ou=groups,dc=ashop,dc=sh
+changetype: add
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+#dn: ou=Users,dc=ashop,dc=sh
+#changetype: add
+#objectclass: top
+#objectclass: organizationalUnit
+#ou: Users
+
+#dn: ou=Devoloper,dc=ashop,dc=sh
+#changetype: add
+#objectclass: top
+#objectclass: organizationalUnit
+#ou: Devolopers
+
+
+
+# Users 
+
+dn: cn=dev1,dc=ashop,dc=sh
+changetype: add
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+objectClass: person
+#objectClass: posixAccount
+objectClass: top
+#objectclass: inetOrgPerson
+##objectClass: organizationalPerson
+##objectClass: person
+###objectClass: account
+###objectClass: posixAccount
+##objectClass: top
+cn: devoloper1
+givenname: developer1
+sn: Developer1
+displayname: Developer User
+mail: developer1@gmail.com
+userpassword: dpass
+###homeDirectory: /tmp
+###homeDirectory: /shared/devoloper
+#loginShell: /bin/bash
+###gidNumber: 100
+uid: dev1
+###uidNumber: 1001
+
+
+# Groups 
+
+dn: cn=devolopers,ou=groups,dc=ashop,dc=sh
+changetype: add
+objectClass: posixGroup
+objectClass: top
+cn: devolopers
+gidNumber: 1001
+memberUid: dev1
+##memberUid: joaquin
+##memberUid: miguel
+
+
+
+
+
+#dn: uid=dev1,dc=ashop,dc=sh
+##dn: uid=jperez,ou=People,dc=ejemplo,dc=com
+#uid: dev1
+#cn: dev 1
+#objectclass: account
+#objectclass: posixAccount
+#objectclass: top
+#loginshell: /bin/bash
+#uidnumber: 512
+#gidnumber: 300
+#homedirectory: /home/dev1
+#gecos: Dev 01,,,,
+#userpassword: dpass
+#userpassword: {crypt}LPnaOoUYN57Netaac
+
+
+#dn: cn=dev2,dc=ashop,dc=sh
+#objectClass: inetOrgPerson
+##objectClass: organizationalPerson
+##objectClass: person
+##objectClass: posixAccount
+##objectClass: top
+#cn: devoloper2
+#userpassword: dpass
+##gidNumber: 1001
+##homeDirectory: /shared/devoloper
+##loginShell: /bin/bash
+##sn: dev2
+##uid: dev
+##uidNumber: 1002
+
+
+#dn: uid=juser,ou=People,dc=company,dc=net,dc=au
+#objectClass: inetOrgPerson
+#objectClass: organizationalPerson
+#objectClass: person
+#objectClass: posixAccount
+#objectClass: top
+#cn: Joe User
+#gidNumber: 100
+#homeDirectory: /home/juser
+#uid: juser
+#uidNumber: 1004
+#gecos: Joe User
+#givenName: Joe
+#loginShell: /bin/bash

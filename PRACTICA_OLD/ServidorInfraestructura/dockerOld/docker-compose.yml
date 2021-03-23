@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  bind:
+#    restart: always
+    image: sameersbn/bind:9.16.1-20200524
+    ports:
+    - "53:53/udp"
+    - "53:53/tcp"
+    - "10000:10000/tcp"
+    volumes:
+#    - ${DIRDATASTACK}/bind:/data
+    - /etc/bind:/data
+   deploy:
+      mode: replicated
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+#      update_config:
+#        parallelism: 1
+#        delay: 10s

@@ -1,0 +1,131 @@
+
+version: '3.7'
+services:
+  squid:
+    image: traefik:1.7.13
+    ports:
+      - target: 80
+        published: 81
+        mode: host
+      - target: 443
+        published: 443
+        mode: host
+      - target: 8080
+        published: 8080
+        mode: host
+    command: >
+      --api
+      --docker
+      --docker.swarmMode
+      --docker.domain=${DOMAIN:-localhost}
+      --docker.watch
+      --defaultentrypoints=http,https
+      --entrypoints='Name:http Address::81'
+      --entrypoints='Name:https Address::443 TLS'
+      --logLevel=INFO
+      --accessLog
+      --metrics
+      --metrics.prometheus
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - netraefik
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      update_config:
+        parallelism: 1
+        delay: 10s
+      restart_policy:
+        condition: on-failure
+      labels:
+        - "traefik.docker.network=netraefik"
+        - "traefik.port=8080"
+#        - "traefik.backend=traefik"
+#        - "traefik.enable=true"
+        - "traefik.frontend.rule=Host:traefik.${DOMAIN:-localhost}"
+ #       - "traefik.frontend.headers.SSLRedirect=true"
+ #       - "traefik.frontend.entryPoints=http,https"
+  agent:
+    image: portainer/agent
+    environment:
+      AGENT_CLUSTER_ADDR: tasks.agent
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
+    networks:
+      - netportainer
+    deploy:
+      mode: global
+      placement:
+        constraints:
+          - node.platform.os == linux
+
+  portainer:
+    image: portainer/portainer
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
+    ports:
+      - 9000:9000 
+#No caldria obrir el port, ja que accedirem via Traefik
+#Pero Traefik necessita un nom DNS per accedir, en aquest cas portainer.contingencia.itb
+#Mentre no tinguem servei DNS, accedirem via IP i port
+#Quan tinguem DNS podem treure la redirecció de ports
+    volumes:
+      - ${DIRDATASTACK}/data:/data
+    networks:
+      - netportainer
+      - netraefik
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        - traefik.frontend.rule=Host:portainer.${DOMAIN}
+#        - traefik.enable=true
+        - traefik.port=9000
+#        - traefik.tags=netraefik
+        - traefik.docker.network=netraefik
+#        - traefik.webservice.frontend.entryPoints=http
+#        - traefik.redirectorservice.frontend.entryPoints=http
+#        - traefik.redirectorservice.frontend.redirect.entryPoint=https
+#        - traefik.webservice.frontend.entryPoints=https
+  php-apache:
+    image: php:7.2.1-apache
+    ports:
+        - 80:80
+    volumes:
+#        - ${DIRDATASTACK}/DocumentRoot:/var/www/html
+        - /test:/var/www/html
+    links:
+        - mariadb'
+
+  mariadb:
+    image: mariadb:10.1
+    volumes:
+        - ~/dockerized-lamp/mariadb:/var/lib/mysql
+    environment:
+          TZ: "Europe/Rome"
+          MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+          MYSQL_ROOT_PASSWORD: "rootpwd"
+          MYSQL_USER: 'testuser'
+          MYSQL_PASSWORD: 'testpassword'
+          MYSQL_DATABASE: 'testdb'
+
+
+
+
+
+#configs:
+#  traefik_htpasswd:
+#    file: ./htpasswd
+
+networks:
+  netraefik:
+    driver: overlay
+    name: netraefik
+  netportainer:
+    driver: overlay
+    name: netportainer

@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  vlc:
+    image: gersilex/cvlc:latest
+    ports:
+      - target: 8080
+        published: 8080
+        protocol: tcp
+        mode: host
+    volumes:
+      - ./stacks/files/:/data/files
+    command: cvlc /data/files/videoplayback.mp4 --sout '#transcode{vcodec=MJPG,venc=ffmpeg{strict=1}}:standard{access=http{mime=multipart/x-mixed-replace;boundary=--7b3cc56e5f51db803f790dad720ed50a},mux=mpjpeg,dst=:8080/}' --no-disable-screensaver

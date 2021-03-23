@@ -1,0 +1,426 @@
+
+File = // ファイル名３２文字まで、拡張子なし
+IsLoop = // ループする曲かどうか
+LoopPos = // ループポイント、終端になったら戻る位置
+
+[BGM_000]
+File = bgmme00 //Blood Drain（オープニングテーマ）使わない
+IsLoop = 0
+LoopPos = 0.0
+
+
+
+[BGM_001]
+File = bgmme01 //Encount（高層建築・シュライン）
+IsLoop = 1
+LoopPos = 05.305
+
+[BGM_002]
+File = bgmme02 //Elegant Summer（遠野邸ホール・夜）
+IsLoop = 1
+LoopPos = 04.675
+
+[BGM_003]
+File = bgmme03 //Troublesome Visitor（遠野邸ホール・異変）
+IsLoop = 1
+LoopPos = 12.725
+
+[BGM_004]
+File = bgmme04 //Fearless（影絵の悪夢）
+IsLoop = 1
+LoopPos = 19.124
+
+[BGM_005]
+File = bgmme05 //Noble Mind (遠野邸・正面入り口）
+IsLoop = 1
+LoopPos = 00.000
+
+[BGM_006]
+File = bgmme06 //Stillness Dark（シュライン最上階・蒼月）
+IsLoop = 1
+LoopPos = 00.000
+
+[BGM_007]
+File = bgmme07 //for Crimson Air（シュライン最上階・朱月）
+IsLoop = 1
+LoopPos = 08.306
+
+[BGM_008]
+File = bgmme08 //Midnight Raider（無影公園）
+IsLoop = 1
+LoopPos = 01.309
+
+[BGM_009]
+File = bgmme09 //PE-RI-CA（遠野家地下王国）
+IsLoop = 1
+LoopPos = 00.000
+
+[BGM_010]
+File = bgmme10 //The theme of Arcueid（死角の辻）
+IsLoop = 1
+LoopPos = 05.885
+
+
+[BGM_012]
+File = bgmme12 //Help Me!（食後のひととき）
+IsLoop = 1
+LoopPos = 02.042
+
+[BGM_013]
+File = bgmme13 //The end of 1000 years（千年城ブリュンスタッド）
+IsLoop = 1
+LoopPos = 05.335
+
+
+[BGM_016]
+File = bgmme16 //Stray cat（真夏の雪）
+IsLoop = 1
+LoopPos = 01.688
+
+[BGM_017]
+File = bgmme17 //Lurk...（星空の辻）
+IsLoop = 1
+LoopPos = 03.963
+
+[BGM_018]
+File = bgmme18 //Beat from "Melty Blood"（魔法使いの夜）
+IsLoop = 1
+LoopPos = 01.076
+
+[BGM_019]
+File = bgmme19 //Fairy Tale transparently（夏に降る雪）
+IsLoop = 1
+LoopPos = 08.014
+
+[BGM_020]
+File = bgmme20 //Wonderful boy（始まりの丘）
+IsLoop = 1
+LoopPos = 08.603
+
+[BGM_021]
+File = bgmme21 //Basilica（主よ導き救い給え）
+IsLoop = 1
+LoopPos = 10.736
+
+[BGM_022]
+File = bgmme22 //戦え！　僕らのメカヒスイ！（遠野家秘密生産工場）
+IsLoop = 1
+LoopPos = 09.176
+
+[BGM_023]
+File = bgmme23 //GCV2005（不思議な不気味な猫の王国）
+IsLoop = 1
+LoopPos = 17.188
+
+[BGM_024]
+File = bgmme24 //Severe person（遠野邸・庭園）
+IsLoop = 1
+LoopPos = 09.837
+
+[BGM_025]
+File = bgmme25 //Tenseness（遠野邸・螺旋書庫）
+IsLoop = 1
+LoopPos = 02.146
+
+[BGM_026]
+File = bgmme26 //Blood heat!（狂王の森）
+IsLoop = 1
+LoopPos = 04.786
+
+[BGM_027]
+File = bgmme27 //Obscure Zone（廃棄空間）
+IsLoop = 1
+LoopPos = 06.400
+
+[BGM_028]
+File = bgmme28 //Modernism Street(不夜の賑わい）
+IsLoop = 1
+LoopPos = 08.020
+
+[BGM_029]
+File = bgmme29 //Maze Walker（迷信の跡）
+IsLoop = 1
+LoopPos = 07.110
+
+
+[BGM_030]
+File = bgmme30 //Silent Rumble（鬼と祠）
+IsLoop = 1
+LoopPos = 04.444
+
+[BGM_031]
+File = bgmme31 //GCV2007 -Another Episode-（いまは滅び去った王国の詩）
+IsLoop = 1
+LoopPos = 00.927
+
+[BGM_032]
+File = bgmme32 //GCV2008 -The Movie-（ジョージ映画村の惨劇）
+IsLoop = 1
+LoopPos = 07.523
+
+
+[BGM_034]
+File = bgmme34 //World End Roar（終末劇場）
+IsLoop = 1
+LoopPos = 08.026
+
+[BGM_035]
+File = bgmme35 //Need Speed（妄信の澱）
+IsLoop = 1
+LoopPos = 05.999
+
+[BGM_036]
+File = bgmme36 //Truth from "Melty Blood"-（主は天にいまし）
+IsLoop = 1
+LoopPos = 07.474
+
+[BGM_037]
+File = bgmme37 //Raven's Nest（空を照らす港）
+IsLoop = 1
+LoopPos = 00.451
+
+[BGM_038]
+File = bgmme38 //Night Labyrinth（午前零時の逢瀬）
+IsLoop = 1
+LoopPos = 07.115
+
+[BGM_039]
+File = bgmme39 //Strange Dreamer（午前零時の逢瀬）
+IsLoop = 1
+LoopPos = 07.110
+
+
+[BGM_040]
+File = bgmme40 //Dimension Theory（逆螺旋暗黒航洞）
+IsLoop = 1
+LoopPos = 07.319
+
+[BGM_041]
+File = bgmme41 //SAKURA-KOI-UTA（桜花繚乱）
+IsLoop = 1
+LoopPos = 13.629
+
+[BGM_042]
+File = bgmme42 //Rhythmical Bustle（無人の街並み）
+IsLoop = 1
+LoopPos = 06.436
+
+[BGM_043]
+File = bgmme43 //Primitive...（巨人の穴蔵）
+IsLoop = 1
+LoopPos = 11.249
+
+[BGM_044]
+File = bgmme44 //Gigantic Power（巨人の穴蔵）
+IsLoop = 1
+LoopPos = 33.600
+
+[BGM_045]
+File = bgmme45 //Good Morning One Scene（夜明けの静寂）
+IsLoop = 1
+LoopPos = 07.384
+
+[BGM_046]
+File = bgmme46 //Uncommon Sense（新たな黎明）
+IsLoop = 1
+LoopPos = 22.587
+
+[BGM_047]
+File = bgmme47 //月隠れの間に（月光）
+IsLoop = 1
+LoopPos = 07.384
+
+
+[BGM_048]
+File = bgmme16 // 16
+IsLoop = 1
+LoopPos = 01.688
+
+
+[BGM_049]
+File = bgmme09 // 9
+IsLoop = 1
+LoopPos = 00.000
+
+
+[BGM_050]
+File = bgmme50 //Nightmare Teller（開放）
+IsLoop = 1
+LoopPos = 11.490
+
+[BGM_051]
+File = bgmme51 //GCV2009 -For the Future-（燃え上がるネコの森）
+IsLoop = 1
+LoopPos = 01.477
+
+
+[BGM_052]
+File = bgmme37 // 37
+IsLoop = 1
+LoopPos = 00.451
+
+
+[BGM_053]
+File = bgmme53 //WABI-SABI Brand new Everyday（束の間の我が家）
+IsLoop = 1
+LoopPos = 03.529
+
+[BGM_054]
+File = bgmme54 //Physical Style（ある結末）
+IsLoop = 1
+LoopPos = 02.085
+
+[BGM_055]
+//File = bgmme55 //空の境界　俯瞰風景（殺人考察／外）使わない
+//IsLoop = 1
+//LoopPos = 07.776
+File = bgmme56 //O-sutra Hit（奉納殿六十四層）　※他の曲を設定
+IsLoop = 1
+LoopPos = 19.125 //16.497から変更
+
+[BGM_056]
+File = bgmme56 //O-sutra Hit（奉納殿六十四層）
+IsLoop = 1
+LoopPos = 19.125 //16.497から変更
+
+
+[BGM_057]
+File = bgmme43 // 43と同じ？
+IsLoop = 1
+LoopPos = 11.249
+
+
+[BGM_058]
+File = bgmme58 //Ｇなアイツ(ver.2009)(Ｇの食卓）確認済
+IsLoop = 1
+LoopPos = 28.945
+
+[BGM_059]
+File = bgmme59 //姫ステージ
+IsLoop = 1
+LoopPos = 01.434
+
+[BGM_071]
+File = bgmme71 //Beginning!（会話１）
+IsLoop = 1
+LoopPos = 0.950
+
+[BGM_072]
+File = bgmme72 //Very Slow Life（会話２）
+IsLoop = 1
+LoopPos = 00.000
+
+[BGM_073]
+File = bgmme73 //Recollection（会話３）
+IsLoop = 1
+LoopPos = 00.000
+
+[BGM_074]
+File = bgmme74 //Unprecedented（会話４）
+IsLoop = 1
+LoopPos = 17.998
+
+[BGM_075]
+File = bgmme75 //Ambition（会話５）
+IsLoop = 1
+LoopPos = 01.003
+
+[BGM_081]
+File = bgmme81 //Recalculation Interrupted Now...（NewChallenger)
+IsLoop = 0
+LoopPos = 0.0
+
+[BGM_082]
+File = bgmme82 //Mortify?（コンティニュー）
+IsLoop = 0
+LoopPos = 0.0
+
+[BGM_083]
+File = bgmme83 //Break Down（ゲームオーバー）
+IsLoop = 0
+LoopPos = 0.0
+
+[BGM_084]
+File = bgmme84 //Curtain Rise（ＶＳ）
+IsLoop = 0
+LoopPos = 0.0
+
+[BGM_085]
+File = bgmme85 //Across（NextStarge）
+IsLoop = 0
+LoopPos = 0.0
+
+[BGM_086]
+File = bgmme86 //Vain Surface(オプション)
+IsLoop = 1
+LoopPos = 06.884
+
+
+
+
+
+/////
+[BGM_090]
+File = bgmme90 //
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_101]
+File = bgmme90b //Everlasting Destiny（エンディングテーマ１）セミロング
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_102]
+File = bgmme90c //Everlasting Destiny（エンディングテーマ１）ロング
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_091]
+File = bgmme91 //Bad Discipline（エンディングテーマ２）
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_092]
+File = bgmme92 //Again with you...（エンディングテーマ３）未使用
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_121]
+File = bgmme92b //Again with you...（エンディングテーマ３）ロング 未使用
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_093]
+File = bgmme93 //静寂のフォルティッシモ（エンディングテーマ４）
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_131]
+File = bgmme93b //静寂のフォルティッシモ（エンディングテーマ４）ロング
+IsLoop = 0
+LoopPos = 00.000
+
+[BGM_094]
+File = bgmme94 //wandering in torture（エンディングテーマ５）
+IsLoop = 0
+LoopPos = 00.000
+
+
+
+
+
+
+
+
+[BGM_098]
+File = bgmme98 //Cinch!(勝利)
+IsLoop = 1
+LoopPos = 1.776
+
+[BGM_099]
+File = bgmme99 //Actor's Anteroom(キャラクターセレクト) 
+IsLoop = 1
+LoopPos = 5.481
+
+//100以降はやめとく
+

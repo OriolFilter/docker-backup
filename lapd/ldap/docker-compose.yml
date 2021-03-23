@@ -1,0 +1,33 @@
+# https://betterprogramming.pub/ldap-docker-image-with-populated-users-3a5b4d090aa4
+
+version: '3'
+services:
+  ldap2:
+#    image: osixia/openldap
+    image: ldaptest
+    ports:
+      - 389:389
+    volumes:
+#      - ./volumes/bootstrap/bootstrap.ldif:/container/service/slapd/assets/config/bootstrap/ldif/50-bootstrap.ldif:rw
+#      - ./volumes/ldap_data:/var/lib/ldap
+#      - ./volumes/ldap_config:/etc/ldap/slapd.d
+      - ./volumes/shared:/shared
+    hostname: ldap2
+    environment:
+#      LDAP_DOMAIN: "ashop.sh"
+#      LDAP_ADMIN_PASSWORD: "pass"
+#      LDAP_ORGANISATION: "Arcade Shop"
+      DEBUG: 1
+#    loglevel: debug
+
+  phpldap2:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: ldap2
+    ports:
+      - 443:443
+#    depends_on:
+#      - ldap2
+    links:
+      - ldap2:ldap2
+    hostname: phpldap2

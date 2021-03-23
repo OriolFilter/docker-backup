@@ -1,0 +1,11 @@
+dn: cn=dev1,dc=ashop,dc=sh
+changetype: add
+objectclass: inetOrgPerson
+cn: dev1
+givenname: developer1
+sn: Developer01
+displayname: Developer User1
+mail: developer01@gmail.com
+userpassword: dpass
+
+

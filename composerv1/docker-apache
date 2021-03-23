@@ -1,0 +1,12 @@
+FROM httpd:latest
+RUN echo "test" > /usr/local/apache2/htdocs/index.html
+
+
+# https://docs.docker.com/develop/develop-images/dockerfile_best-practices/
+
+# https://docs.docker.com/engine/reference/commandline/build/
+
+# https://redgreenrepeat.com/2018/04/20/how-to-conditionally-create-a-file-in-dockerfile-build/
+
+# https://stackoverflow.com/questions/37976241/writing-data-to-file-in-dockerfile
+

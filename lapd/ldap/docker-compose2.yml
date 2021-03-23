@@ -1,0 +1,35 @@
+version: '3'
+services:
+  slapd:
+    image: osixia/openldap
+#    environment:
+#      - LDAP_ADMIN_USERNAME=admin
+#      - LDAP_ADMIN_PASSWORD=admin
+#      - LDAP_USERS=user01,user02
+#      - LDAP_PASSWORDS=password1,password2
+#      - LDAP_ORGANISATION=example
+#      - LDAP_DOMAIN=example.com
+#      - LDAP_ADMIN_PASSWORD=secret
+    ports:
+      - 389:389
+    hostname: sldap
+  phpldap:
+    image: osixia/phpldapadmin
+    environment:
+      PHPLDAPADMIN_LDAP_HOSTS: lapd
+#      PHPLDAPADMIN_LDAP_HOSTS: localhost
+#      PHPLDAPADMIN_LDAP_HOSTS: ldap-host
+#        - ldap.example.org:
+#           - server:
+#             - tls: true
+#           - login:
+#             - bind_id: cn=admin,dc=example,dc=org
+#      PHPLDAPADMIN_HTTPS: 'false'
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - slapd
+    links:
+      - slapd:ldap
+    hostname: phpldap
